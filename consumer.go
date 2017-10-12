@@ -72,6 +72,10 @@ func NewConsumer(addrs []string, groupID string, topics []string, config *Config
 	return c, nil
 }
 
+func (c *Consumer) GetClient() *sarama.Client {
+	return &c.client.Client
+}
+
 // Messages returns the read channel for the messages that are returned by
 // the broker.
 //
